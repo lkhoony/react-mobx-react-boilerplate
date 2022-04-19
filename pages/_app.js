@@ -1,11 +1,11 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { Helmet } from 'react-helmet';
-import styledNormalize from 'styled-normalize';
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { Helmet } from 'react-helmet'
+import styledNormalize from 'styled-normalize'
 
-import useStore from '../src/store';
-import Layout from '../src/layout/Layout';
-import theme from '../src/themes/theme';
-import { Provider } from 'mobx-react';
+import { useStore } from '../src/stores/RootStore'
+import Layout from '../src/layout/Layout'
+import theme from '../src/themes/theme'
+import { Provider } from 'mobx-react'
 
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -14,13 +14,11 @@ const GlobalStyle = createGlobalStyle`
  * mobx provider 상위 컴포넌트로
  */
 
-export default function MyApp (props) {
+const MyApp = (props) => {
 
-  const { Component, pageProps } = props;
-
-  const store = useStore(pageProps);
-
-  const title = 'Hello next.js Real World!';
+  const { Component, pageProps } = props
+  const store = useStore();
+  const title = 'Hello next.js Real World!'
 
   return (
     <>
@@ -38,5 +36,7 @@ export default function MyApp (props) {
         </Provider>
       </ThemeProvider>
     </>
-  );
+  )
 }
+
+export default MyApp;
