@@ -22,8 +22,6 @@ app.prepare().then(() => {
   }))
 
   server.get('*', (req, res) => {
-    console.log(process.env.NODE_ENV);
-    console.log(dev);
     return handler(req, res)
   })
 
