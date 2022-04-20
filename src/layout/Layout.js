@@ -1,23 +1,23 @@
-import Link from 'next/link'
+import React, {useState} from 'react'
+import { Container, Contents } from './LayoutStyles'
+import { SideBar, Header } from '../components/presentationals'
 
-const Layout = (props) => {
+const Layout = ({children}) => {
 
-  return(
-    <div className='layout'>
-      <header>
-        <img src='/static/next-logo.png' />
-        <h3>nextjs redux starter</h3>
-        <menu>
-          <Link href='/about'>
-            <a>About</a>
-          </Link>
-          <Link href='/'>
-            <a>Redux demo</a>
-          </Link>
-        </menu>
-      </header>
-      { props.children }
-    </div>
+  const [isShown, setIsShown] = useState(false);
+
+  const toggleHeader = () => {
+    setIsShown(!isShown);
+  }
+
+  return (
+    <Container>
+      <SideBar/>
+      <Contents isShown={isShown}>
+        <Header/>
+        {children}
+      </Contents>
+    </Container>
   )
 }
 
