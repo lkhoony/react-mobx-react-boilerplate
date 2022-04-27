@@ -1,3 +1,4 @@
 exports.default = {
-    PI_URL: 'http://localhost:3100/production'
+    // api production url
+    API_URL: 'http://localhost:3100/production'
 };

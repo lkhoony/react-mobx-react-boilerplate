@@ -18,5 +18,20 @@ module.exports = {
         NODE_ENV: 'production',
       }
     },
-  ]
+  ],
+
+  deploy: {
+    production: {
+      user: 'kwanghun_lee1', // 배포할 서버의 유저
+      host: ['0.0.0.0'], // 배포 서버의 IP 주소
+      ref: 'origin/main', // 배포할 깃허브 브랜치
+      repo: 'git@github.com:lkhoony/react-mobx-react-boilerplate.git', // 배포(clone)할 깃허브 저장소
+      ssh_options: "StrictHostKeyChecking=no",
+      path: '/test/', // clone 파일이 저장될 서버의 경로
+      'post-setup': 'npm install -g yarn',
+      'post-deploy': 'yarn install && yarn build && yarn production',
+    },
+  },
+
+  // pm2 deploy production setup : 배포 전 셋업
 };

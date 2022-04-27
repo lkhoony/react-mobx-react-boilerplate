@@ -6,6 +6,8 @@ let store = null
 
 const isServer = typeof window === 'undefined'
 
+console.log(isServer);
+
 /**
  * store 초기값 설정
  * @type {{counterStore: {number: number}}}

@@ -15,7 +15,11 @@ app.prepare().then(() => {
   server.use(helmet())
   server.use(compression())
 
+  console.log("express server");
+  console.log(process.env.NODE_ENV);
+
   const staticPath = path.join(__dirname, '../static')
+
   server.use('/static', express.static(staticPath, {
     maxAge: '30d',
     immutable: true

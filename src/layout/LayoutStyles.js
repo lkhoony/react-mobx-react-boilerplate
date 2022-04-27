@@ -9,9 +9,9 @@ export const Container = styled.div`
 `;
 
 export const Contents = styled.div`
-    margin-left: ${({ isShown }) => (isShown ? '90%' : '200px')};
+    margin-left: 313px;
     // margin-top : 100px;
-    width: calc(100vw - 200px);
+    width: calc(100vw - 313px);
     height : 100vh;
     transition: margin-left 1s;
     background : white;
@@ -19,4 +19,8 @@ export const Contents = styled.div`
     //     margin-left : 0;
     //     width : 100vw;
     // }
+`
+
+export const Body = styled.div`
+  padding-left : 102px;
 `

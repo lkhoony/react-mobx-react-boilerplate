@@ -17,6 +17,8 @@ const receiveResponse = (params, route, method = 'get') => {
     return new Promise((resolve, reject) => {
 
         const fullURL = `${ServerConfig.default.API_URL}${receivedRoute}`;
+        console.log("api");
+        console.log(fullURL);
 
         axios[method](fullURL, params, headers)
             .then(response => resolve(response))

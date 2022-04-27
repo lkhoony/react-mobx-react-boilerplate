@@ -1,17 +1,11 @@
-import { useRouter } from 'next/router'
+import Home from '../src/components/home/Home'
 
-const IndexPage = () => {
+const IndexPage = (props) => {
 
-  const router = useRouter()
-
-  return (
-    <>
-      <div onClick={() => router.push('/about')}>
-        GO TO ABOUT (with <code>router</code>)
-      </div>
-    </>
+  return(
+    <Home></Home>
   )
-}
 
+}
 
 export default IndexPage

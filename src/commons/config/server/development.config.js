@@ -1,4 +1,4 @@
 exports.default = {
-    // api url
+    // api development url
     API_URL: 'http://localhost:3100'
 };

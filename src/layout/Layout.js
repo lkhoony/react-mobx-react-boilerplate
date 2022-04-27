@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import { Container, Contents } from './LayoutStyles'
-import { SideBar, Header } from '../components/presentationals'
+import { Container, Contents, Body } from './LayoutStyles'
+import Header from './Header'
+import SideBar from './SideBar'
 
 const Layout = ({children}) => {
 
@@ -12,10 +13,12 @@ const Layout = ({children}) => {
 
   return (
     <Container>
-      <SideBar/>
+      <SideBar />
       <Contents isShown={isShown}>
-        <Header/>
-        {children}
+        <Header />
+        <Body>
+          {children}
+        </Body>
       </Contents>
     </Container>
   )

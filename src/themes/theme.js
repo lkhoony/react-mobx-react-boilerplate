@@ -1,6 +1,8 @@
 export default {
   colors: {
-    primary: '#003648'
+    primary: '#003648',
+    border : '#F1F5F9',
+
   },
 
   breakpoints: {
