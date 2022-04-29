@@ -1,5 +1,15 @@
 import react, {useState} from 'react'
-import { HeaderContainer, LinkMenu, NavLink, NavLinkWrap } from './HeaderStyles'
+import {
+  HeaderContainer,
+  LinkMenu,
+  NavLink,
+  NavLinkWrap,
+  NotificationButton,
+  NotificationMenu,
+  NotificationTitle
+} from './HeaderStyles'
+import NotificationMessage from './NotificationMessage';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -11,6 +21,7 @@ const menus = [
 const Header = (props) => {
 
   const router = useRouter();
+  const [openNotification, setOpenNotification] = useState(false);
 
   const createMenus = (menus) => {
 
@@ -25,21 +36,27 @@ const Header = (props) => {
     })
 
   }
+
+  const onClickNotification = (e) => {
+    setOpenNotification(!openNotification);
+  }
+
   return(
     <HeaderContainer>
       <LinkMenu>
-        {/*<li>*/}
-        {/*  <Link href={"/about"}>*/}
-        {/*    <NavLink>소통해요</NavLink>*/}
-        {/*  </Link>*/}
-        {/*</li>*/}
-        {/*<li>*/}
-        {/*  <Link href={"/about"}>*/}
-        {/*    <NavLink>모여봐요</NavLink>*/}
-        {/*  </Link>*/}
-        {/*</li>*/}
         {createMenus(menus)}
       </LinkMenu>
+      <NotificationButton onClick={onClickNotification} />
+      <NotificationMenu open={openNotification}>
+        <NotificationTitle>알림</NotificationTitle>
+        <NotificationMessage>test</NotificationMessage>
+        <NotificationMessage>test</NotificationMessage>
+        <NotificationMessage>test</NotificationMessage>
+        <NotificationMessage>test</NotificationMessage>
+        <NotificationMessage>test</NotificationMessage>
+        <NotificationMessage>test</NotificationMessage>
+
+      </NotificationMenu>
     </HeaderContainer>
   )
 }

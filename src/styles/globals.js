@@ -15,6 +15,12 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
   
+  body {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight : 500;
+  }
+  
   a {
     text-decoration: none;
   }
